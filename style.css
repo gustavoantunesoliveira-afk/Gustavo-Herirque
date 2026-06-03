@@ -1,0 +1,466 @@
+/* --- DIRETRIZES FUTURISTAS VERDES (VARIÁVEIS) --- */
+:root {
+    --fundo-cyber: #080c10;
+    --fundo-card: #10161d;
+    --neon-verde: #39ff14; /* Verde Fluorescente / Neon Puro */
+    --neon-verde-glow: rgba(57, 255, 20, 0.35);
+    --verde-escuro-matrix: #0f3d19;
+    --texto-principal: #c9d1d9;
+    --texto-titulo: #ffffff;
+    --borda-cyber: #21262d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace, system-ui;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--fundo-cyber);
+    color: var(--texto-principal);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* Linha superior luminosa verde */
+.linha-neon-topo {
+    height: 4px;
+    background: linear-gradient(90deg, var(--verde-escuro-matrix), var(--neon-verde), var(--verde-escuro-matrix));
+    box-shadow: 0 0 15px var(--neon-verde);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+}
+
+/* --- NAVBAR FUTURISTA --- */
+.navbar {
+    background-color: rgba(8, 12, 16, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 4px;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--borda-cyber);
+    padding: 1.2rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--texto-titulo);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--neon-verde);
+    text-shadow: 0 0 8px var(--neon-verde-glow);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.8rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--texto-principal);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--neon-verde);
+    text-shadow: 0 0 10px var(--neon-verde);
+}
+
+/* Linha animada sob o menu */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--neon-verde);
+    box-shadow: 0 0 8px var(--neon-verde);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    background: linear-gradient(180deg, rgba(8, 12, 16, 0.7) 0%, #080c10 100%), 
+                url('https://images.unsplash.com/photo-1558449028-b53a39d100fc?q=80&w=1200') no-repeat center center/cover;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 2rem 50px 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--borda-cyber);
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    color: var(--texto-titulo);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin: 1.5rem 0;
+    min-height: 4.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin: 0 auto 2.5rem auto;
+    color: #8b949e;
+}
+
+/* --- BADGES E BOTÕES NEON VERDES --- */
+.badge-neon {
+    border: 1px solid var(--neon-verde);
+    color: var(--neon-verde);
+    padding: 6px 18px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px var(--neon-verde-glow);
+    background-color: rgba(57, 255, 20, 0.05);
+}
+
+.btn-neon-verde {
+    display: inline-block;
+    border: 2px solid var(--neon-verde);
+    color: var(--texto-titulo);
+    text-decoration: none;
+    padding: 14px 38px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0 var(--neon-verde), 0 0 15px var(--neon-verde-glow);
+    transition: all 0.4s ease;
+}
+
+.btn-neon-verde:hover {
+    background-color: var(--neon-verde);
+    color: #000000;
+    box-shadow: 0 0 30px var(--neon-verde);
+    transform: translateY(-3px);
+}
+
+/* --- CONTAINER E SEÇÕES EM GRID --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.secao-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 6rem;
+    padding: 2.5rem;
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda-cyber);
+    border-radius: 8px;
+}
+
+.secao-grid.invertida {
+    direction: rtl;
+}
+.secao-grid.invertida .texto-bloco {
+    direction: ltr;
+}
+
+.subtitulo-neon {
+    color: var(--neon-verde);
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.secao-grid h2 {
+    font-size: 2rem;
+    color: var(--texto-titulo);
+    margin-bottom: 1.5rem;
+}
+
+.neon-texto {
+    color: var(--neon-verde);
+}
+
+/* Imagens com Brilho Verde */
+.imagem-bloco img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--borda-cyber);
+    filter: grayscale(15%) contrast(105%);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+.secao-grid:hover .imagem-bloco img {
+    border-color: var(--neon-verde);
+    box-shadow: 0 0 20px var(--neon-verde-glow);
+}
+
+/* Painéis de Aviso Tecnológicos */
+.painel-alerta-verde {
+    background-color: rgba(57, 255, 20, 0.02);
+    border-left: 3px solid var(--neon-verde);
+    padding: 1.2rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* --- GRID DE CARDS FUTURISTAS --- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 6rem;
+}
+
+.card-futurista {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda-cyber);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.card-futurista:hover {
+    border-color: var(--neon-verde);
+    box-shadow: 0 0 20px var(--neon-verde-glow);
+    transform: translateY(-5px);
+}
+
+.icon-neon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-futurista h3 {
+    color: var(--texto-titulo);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+/* --- PAINEL DE DADOS --- */
+.painel-dados {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda-cyber);
+    padding: 4rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.painel-dados h2 {
+    color: var(--texto-titulo);
+    margin-bottom: 1rem;
+}
+
+.descricao-painel {
+    color: #8b949e;
+    margin-bottom: 3rem;
+}
+
+.grid-metricas {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.numero-neon {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--neon-verde);
+    text-shadow: 0 0 15px var(--neon-verde-glow);
+    margin-bottom: 0.5rem;
+}
+
+.metrica-item p {
+    font-size: 0.9rem;
+    max-width: 250px;
+    color: var(--texto-principal);
+}
+
+/* --- TERMINAL INTERATIVO --- */
+.card-interativo-cyber {
+    background-color: #040608;
+    border: 2px dashed var(--borda-cyber);
+    padding: 4rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.card-interativo-cyber h2 {
+    color: var(--texto-titulo);
+    margin-bottom: 1rem;
+}
+
+.instrucao {
+    color: #8b949e;
+    margin-bottom: 2rem;
+}
+
+#btnClick {
+    background-color: transparent;
+    border: 2px solid var(--neon-verde);
+    color: var(--neon-verde);
+    padding: 15px 40px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px var(--neon-verde-glow);
+    transition: all 0.3s ease;
+}
+
+#btnClick:hover {
+    background-color: var(--neon-verde);
+    color: #000000;
+    box-shadow: 0 0 25px var(--neon-verde);
+}
+
+.escondido { display: none; }
+
+.mostrado {
+    display: block;
+    max-width: 750px;
+    margin: 3rem auto 0 auto;
+    background-color: #080c10;
+    border: 1px solid var(--neon-verde);
+    border-radius: 6px;
+    box-shadow: 0 0 20px var(--neon-verde-glow);
+    text-align: left;
+    animation: abrirTerminal 0.4s ease-out;
+}
+
+.terminal-header {
+    background-color: #10161d;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--borda-cyber);
+}
+
+.terminal-header p {
+    font-size: 0.8rem;
+    color: #8b949e;
+    margin-left: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.green-dot { background-color: #27c93f; opacity: 0.8; }
+
+.terminal-corpo {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.linha-comando { color: #8b949e; margin-bottom: 0.5rem; }
+.linha-sucesso { color: var(--neon-verde); font-weight: bold; margin: 1rem 0; }
+
+.terminal-corpo ul { list-style: none; padding-left: 10px;}
+.terminal-corpo li { margin-bottom: 0.8rem; border-left: 2px solid var(--neon-verde); padding-left: 10px;}
+
+/* --- FOOTER CYBER --- */
+footer {
+    background-color: #040608;
+    border-top: 1px solid var(--borda-cyber);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.codigo-rodape {
+    color: var(--neon-verde);
+    text-shadow: 0 0 5px var(--neon-verde-glow);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* --- ANIMAÇÕES --- */
+.animar-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animar-scroll.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pulsa-neon {
+    animation: pulsarVerde 2s infinite alternate;
+}
+@keyframes pulsarVerde {
+    0% { box-shadow: 0 0 8px rgba(57, 255, 20, 0.4); border-color: rgba(57, 255, 20, 0.6); }
+    100% { box-shadow: 0 0 20px var(--neon-verde); border-color: var(--neon-verde); }
+}
+
+#efeito-digitar::after {
+    content: '|';
+    margin-left: 5px;
+    color: var(--neon-verde);
+    animation: piscarCursor 0.8s infinite;
+}
+@keyframes piscarCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes abrirTerminal {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@media (max-width: 900px) {
+    .secao-grid, .secao-grid.invertida {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .hero h1 { font-size: 2.2rem; }
+}
